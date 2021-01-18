@@ -1,18 +1,21 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import {Paper} from '@material-ui/core';
 import hero1 from '../../static/hero-1.png';
 import hero2 from '../../static/hero-2.png';
 import { makeStyles } from '@material-ui/core/styles';
-import { Height } from '@material-ui/icons';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width:'100%',
+        backgroundColor: ''
     },
 
     headline: {
-        width:'900px',
+        maxWidth:'64vw',
+        [theme.breakpoints.down('sm')]:{
+            maxWidth:'90vw',
+        },
     },
 }))
 
@@ -31,8 +34,9 @@ export default function Headline(props) {
     return (
         <Carousel
             className={classes.root}
-            navButtonsAlwaysVisible="true"
-           animation="slide"
+            indicatorProps={{style: {color: '#80B2E9'}}}
+            activeIndicatorProps={{style: {color: '#0064D2'}}}
+            animation="slide"
         >
             {
                 items.map( (item, i) => 
@@ -46,7 +50,8 @@ export default function Headline(props) {
 function Item(props){
     const classes = useStyles();
     return(
-        <div>
+       
+        <div >
              <img className={classes.headline} src={props.item.img}/>
         </div>
     );

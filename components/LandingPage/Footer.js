@@ -10,7 +10,8 @@ import mainLogo from '../../static/sahabat-favicon.png';
 
 const useStyles = makeStyles((theme) => ({
     root:{
-        color: 'black'
+        color: 'black',
+        backgroundColor: '#EDEDED'
     },
     gridRoot:{
         flexGrow: 1,
@@ -18,17 +19,21 @@ const useStyles = makeStyles((theme) => ({
     },
     grid:{
         backgroundColor: "",
-        padding: theme.spacing(4),
+        padding: theme.spacing(2),
     },
     img:{
         maxWidth:'400px',
     },
-    icon:{
-        margin: theme.spacing(2),
-        backgroundColor:'blue'
-    },
     button:{
         color:'black'
+    },
+    copyright:{
+        color: '#0064D2',
+        padding: theme.spacing(2),
+    },
+    codepanda:{
+        textDecoration: 'none',
+        color: '#0064D2'
     }
 }));
 
@@ -105,9 +110,9 @@ export default function Footer(){
                     </Link>
                 </Grid>
                 <Grid item xs={12} className={classes.grid} >
-                    <p>
-                        © 2019 Copyright: Sahabat Tutor 2019 Developed by <a href="https://codepanda.id/">codepanda.id</a>
-                    </p>   
+                    <Typography variant="body1" className={classes.copyright}>
+                        © 2021 Copyright: Sahabat Tutor 2021 Developed by <a className={classes.codepanda} href="https://codepanda.id/"><b>codepanda.id</b></a>
+                    </Typography>   
                 </Grid>
             </Grid>
         </div>

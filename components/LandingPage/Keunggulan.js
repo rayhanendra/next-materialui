@@ -26,7 +26,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#0064D2'
     },
     adjust:{
-        marginTop: '150px',
+        marginTop: '35%',
+        [theme.breakpoints.down('sm')]:{
+            marginTop: '0%',
+        },
     },
 
 }));
@@ -37,15 +40,15 @@ export default function Keunggulan(){
     return (
         <div>
             <Grid container className={classes.gridRoot}> 
-                <Grid item xs={12} md={6} className={classes.grid} >
+                <Grid item xs={12} sm={6} className={classes.grid} >
                     <img className={classes.img} src={fitur}/>
                 </Grid>
-                <Grid item xs={12} md={6} className={classes.grid} >
+                <Grid item xs={12} sm={6} className={classes.grid} >
                    <div  className={classes.adjust}>
                         <Typography variant="h5" className={classes.title}>Pemanggilan Tutor Untuk Semua Matakuliah</Typography> 
-                        
+                        <br/>
                         <Typography variant="subtitle1" >Belajar kapanpun dan dimanapun dengan proses pemesanan tutor ahli yang mudah dan menenyangkan</Typography> 
-
+                        <br/>
                         <Link href="https://play.google.com/store/apps/details?id=id.codepanda.sahabattutor.pelajar" passHref>
                             <Button>
                                 <img className={classes.gplay} src={gplay}/>

@@ -16,12 +16,11 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '100vh',
       color: 'black',
       backgroundColor: 'white',
-
+    
     },
     gridRoot:{
         flexGrow: 1,
         textAlign: 'center',
-       
     },
     grid:{
         backgroundColor: "",
@@ -33,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     },
     titleLayanan:{
         color: '#0064D2'
+    },
+    container:{
+        backgroundColor:'',
     }
 
 }));
@@ -63,7 +65,7 @@ export default function Layout(props) {
     return (
         <div className={classes.root}>
             <Header/>
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" className={classes.container}>
 
                 <Grid container className={classes.gridRoot}> 
                     <Grid item xs={12} >
@@ -99,7 +101,7 @@ export default function Layout(props) {
                         <Daftar/>
                     </Grid>
 
-                    <Grid item xs={12} className={classes.grid}>
+                    <Grid item xs={12}>
                         <Footer/>
                     </Grid>
 
@@ -112,9 +114,8 @@ export default function Layout(props) {
 function Layanan(props){
     const classes = useStyles();
     return(
-        <Grid item xs={12} md={4} className={classes.grid}>
+        <Grid item xs={12} sm={4} className={classes.grid}>
             <img className={classes.imgLayanan} src={props.item.img}/>
-            
             <Typography variant="h5" className={classes.titleLayanan}>{props.item.title}</Typography>
             <Typography variant="subtitle1">{props.item.desc}</Typography>
         </Grid>
